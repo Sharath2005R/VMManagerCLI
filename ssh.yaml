@@ -1,0 +1,11 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+packages:
+  - openssh-server
+  - build-essential
+  - dkms
+runcmd:
+  - systemctl enable ssh
+  - systemctl start ssh
+  - ufw allow ssh
